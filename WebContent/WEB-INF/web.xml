@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+
+
+	<listener>
+		<listener-class>com.zsx.utils.ListenerLoadConfig</listener-class>
+	</listener>
+
+	<servlet>
+		<servlet-name>Test</servlet-name>
+		<servlet-class>com.zsx.servlets.Test</servlet-class>
+	</servlet>
+
+
+	<servlet-mapping>
+		<servlet-name>Test</servlet-name>
+		<url-pattern>/Test</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>RegistUser</servlet-name>
+		<servlet-class>com.zsx.servlets.RegistUser</servlet-class>
+	</servlet>
+
+
+	<servlet-mapping>
+		<servlet-name>RegistUser</servlet-name>
+		<url-pattern>/RegistUser</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>LoginUser</servlet-name>
+		<servlet-class>com.zsx.servlets.LoginUser</servlet-class>
+	</servlet>
+
+
+	<servlet-mapping>
+		<servlet-name>LoginUser</servlet-name>
+		<url-pattern>/LoginUser</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>GetUserInfo</servlet-name>
+		<servlet-class>com.zsx.servlets.GetUserInfo</servlet-class>
+	</servlet>
+
+
+	<servlet-mapping>
+		<servlet-name>GetUserInfo</servlet-name>
+		<url-pattern>/GetUserInfo</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>UpdateUserInfo</servlet-name>
+		<servlet-class>com.zsx.servlets.UpdateUserInfo</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>UpdateUserInfo</servlet-name>
+		<url-pattern>/UpdateUserInfo</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ImageUpload</servlet-name>
+		<servlet-class>com.zsx.servlets.ImageUpload</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>ImageUpload</servlet-name>
+		<url-pattern>/ImageUpload</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>UpdateHeadUrl</servlet-name>
+		<servlet-class>com.zsx.servlets.UpdateHeadUrl</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>UpdateHeadUrl</servlet-name>
+		<url-pattern>/UpdateHeadUrl</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>GetRandomArticle</servlet-name>
+		<servlet-class>com.zsx.servlets.GetRandomArticle</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>GetRandomArticle</servlet-name>
+		<url-pattern>/GetRandomArticle</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>GetTypeArticle</servlet-name>
+		<servlet-class>com.zsx.servlets.GetTypeArticle</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>GetTypeArticle</servlet-name>
+		<url-pattern>/GetTypeArticle</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>WritePostBar</servlet-name>
+		<servlet-class>com.zsx.servlets.WritePostBar</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>WritePostBar</servlet-name>
+		<url-pattern>/WritePostBar</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>GetPostBar</servlet-name>
+		<servlet-class>com.zsx.servlets.GetPostBar</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>GetPostBar</servlet-name>
+		<url-pattern>/GetPostBar</url-pattern>
+	</servlet-mapping>
+
+
+
+</web-app>
+
+
+	
