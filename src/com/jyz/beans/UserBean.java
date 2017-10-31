@@ -1,4 +1,4 @@
-package com.zsx.beans;
+package com.jyz.beans;
 
 public class UserBean {
 

@@ -1,4 +1,4 @@
-package com.zsx.servlets.base;
+package com.jyz.servlets.base;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.zsx.Daos.TokenDaoImp;
+import com.jyz.Daos.TokenDaoImp;
 
 import net.sf.json.JSONObject;
 

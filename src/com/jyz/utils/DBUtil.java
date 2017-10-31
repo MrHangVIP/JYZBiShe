@@ -1,6 +1,6 @@
-package com.zsx.utils;
+package com.jyz.utils;
 
-import static com.zsx.utils.LoadDBconfig.*;
+import static com.jyz.utils.LoadDBconfig.*;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

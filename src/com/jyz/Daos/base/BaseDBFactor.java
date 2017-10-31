@@ -1,8 +1,8 @@
-package com.zsx.Daos.base;
+package com.jyz.Daos.base;
 
 import java.util.List;
 
-import com.zsx.utils.DBUtil;
+import com.jyz.utils.DBUtil;
 
 /**
  * 数据库操作基类

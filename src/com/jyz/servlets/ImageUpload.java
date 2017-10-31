@@ -1,4 +1,4 @@
-package com.zsx.servlets;
+package com.jyz.servlets;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.sun.org.apache.xml.internal.security.exceptions.Base64DecodingException;
 import com.sun.org.apache.xml.internal.security.utils.Base64;
-import com.zsx.servlets.base.BaseServletFactory;
+import com.jyz.servlets.base.BaseServletFactory;
 
 import net.sf.json.JSONArray;
 
@@ -35,11 +35,11 @@ public class ImageUpload extends BaseServletFactory {
 			return getJsonMap();
 		}
 		// String getServletPath= request.getServletPath();
-		// D:\GitWorkSpace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\ZSXBiShe\ZSXBiShe\ImageUpload
+		// D:\GitWorkSpace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\jyzBiShe\jyzBiShe\ImageUpload
 		// getRealPath=request.getSession().getServletContext().getRealPath(request.getRequestURI());
-		// D:\GitWorkSpace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\ZSXBiShe\
+		// D:\GitWorkSpace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\jyzBiShe\
 		String imagePath = this.getServletConfig().getServletContext().getRealPath("/");
-//		/Users/songzhihang/Workspace/gitworkspace/webWorkSpace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/zsxbishe/image/1489657508511.png
+//		/Users/songzhihang/Workspace/gitworkspace/webWorkSpace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/jyzbishe/image/1489657508511.png
 		
 		List<String> images = new ArrayList<String>();
 		List<String> imageNameList = new ArrayList<String>();

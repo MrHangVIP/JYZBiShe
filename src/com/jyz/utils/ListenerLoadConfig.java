@@ -1,4 +1,4 @@
-package com.zsx.utils;
+package com.jyz.utils;
 
 import java.util.List;
 import java.util.Timer;
@@ -7,8 +7,8 @@ import java.util.TimerTask;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
-import com.zsx.Daos.TokenDaoImp;
-import com.zsx.beans.TokenBean;
+import com.jyz.Daos.TokenDaoImp;
+import com.jyz.beans.TokenBean;
 
 /**
  * 监听上下文加载配置

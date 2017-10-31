@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.zsx.servlets;
+package com.jyz.servlets;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,12 +9,12 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.zsx.Daos.TokenDaoImp;
-import com.zsx.Daos.UserDaoImp;
-import com.zsx.beans.TokenBean;
-import com.zsx.beans.UserBean;
-import com.zsx.servlets.base.BaseServletFactory;
-import com.zsx.utils.Constant;
+import com.jyz.Daos.TokenDaoImp;
+import com.jyz.Daos.UserDaoImp;
+import com.jyz.beans.TokenBean;
+import com.jyz.beans.UserBean;
+import com.jyz.servlets.base.BaseServletFactory;
+import com.jyz.utils.Constant;
 
 import net.sf.json.JSONObject;
 

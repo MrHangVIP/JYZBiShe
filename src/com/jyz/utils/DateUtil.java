@@ -1,4 +1,4 @@
-package com.zsx.utils;
+package com.jyz.utils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

@@ -1,4 +1,4 @@
-package com.zsx.Daos;
+package com.jyz.Daos;
 
 import java.sql.Connection;
 import java.sql.Date;
@@ -9,9 +9,9 @@ import java.util.List;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 
-import com.zsx.Daos.base.BaseDBFactor;
-import com.zsx.beans.UserBean;
-import com.zsx.utils.DateUtil;
+import com.jyz.Daos.base.BaseDBFactor;
+import com.jyz.beans.UserBean;
+import com.jyz.utils.DateUtil;
 
 /**
  * 用户相关数据操作的实现类

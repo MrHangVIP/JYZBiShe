@@ -1,4 +1,4 @@
-package com.zsx.Daos;
+package com.jyz.Daos;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,8 +8,8 @@ import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 
-import com.zsx.Daos.base.BaseDBFactor;
-import com.zsx.beans.TokenBean;
+import com.jyz.Daos.base.BaseDBFactor;
+import com.jyz.beans.TokenBean;
 
 public class TokenDaoImp extends BaseDBFactor<TokenBean> {
 
