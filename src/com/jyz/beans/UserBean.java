@@ -2,7 +2,7 @@ package com.jyz.beans;
 
 public class UserBean {
 
-	private int stuId;
+	private int userId;
 	
 	private String userPhone;
 	
@@ -14,7 +14,7 @@ public class UserBean {
 	
 	private String lastUpdateTime;
 	
-	private String status;
+	private int score;
 	
 	private String city;
 	
@@ -30,22 +30,13 @@ public class UserBean {
 		
 	}
 	
-	public UserBean(String userPhone,String status,String nickName,String city,String birthday){
+	public UserBean(String userPhone,String nickName,String city,String birthday){
 		this.userPhone=userPhone;
-		this.status=status;
 		this.nickName=nickName;
 		this.city=city;
 		this.birthday=birthday;
 	}
 	
-	public int getStuId() {
-		return stuId;
-	}
-
-	public void setStuId(int stuId) {
-		this.stuId = stuId;
-	}
-
 	public String getUserPhone() {
 		return userPhone;
 	}
@@ -86,12 +77,21 @@ public class UserBean {
 		this.lastUpdateTime = lastUpdateTime;
 	}
 
-	public String getStatus() {
-		return status;
+	
+	public int getUserId() {
+		return userId;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+
+	public int getScore() {
+		return score;
+	}
+
+	public void setScore(int score) {
+		this.score = score;
 	}
 
 	public String getCity() {

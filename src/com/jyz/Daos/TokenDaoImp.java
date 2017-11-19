@@ -160,4 +160,9 @@ public class TokenDaoImp extends BaseDBFactor<TokenBean> {
 		return tokenList;
 	}
 
+	@Override
+	public TokenBean getData(Object... obj) {
+		return null;
+	}
+
 }

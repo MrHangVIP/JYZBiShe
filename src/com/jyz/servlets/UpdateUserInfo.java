@@ -16,7 +16,6 @@ public class UpdateUserInfo extends BaseServletFactory {
 	@Override
 	protected Map<String, String> dataModel(HttpServletRequest request, HttpServletResponse response) {
 		String userPhone=request.getParameter("userPhone");
-		String status=request.getParameter("status");
 		String nickName=request.getParameter("nickName");
 		String city=request.getParameter("city");
 		String birthday=request.getParameter("birthday");
@@ -25,7 +24,7 @@ public class UpdateUserInfo extends BaseServletFactory {
 		if(!tokenChecked(userPhone, token)){
 			map=getJsonMap();
 		}else{
-			UserBean user=new UserBean(userPhone, status, nickName, city, birthday);
+			UserBean user=new UserBean(userPhone, nickName, city, birthday);
 			UserDaoImp usermodel=new UserDaoImp();
 			boolean  update=usermodel.updateData(user);
 			if(update){

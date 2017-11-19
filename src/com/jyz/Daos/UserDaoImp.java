@@ -27,14 +27,13 @@ public class UserDaoImp extends BaseDBFactor<UserBean> {
 		 int rowCount=0;
 		try {
 			conn=getConn();
-			String sql="insert into t_user(userphone, userpass,createtime,nickname,status) value(?,?,?,?,?)";
+			String sql="insert into t_user(userphone, userpass,createtime,nickname) value(?,?,?,?)";
 			stat=conn.prepareStatement(sql);
 			//设置值
 			stat.setString(1, user.getUserPhone());
 			stat.setString(2, user.getUserPass());
 			stat.setString(3, DateUtil.getCurrentDate());
 			stat.setString(4,user.getUserPhone());
-			stat.setString(5,user.getStatus());
 			//执行
 			rowCount=stat.executeUpdate();
 		} catch (Exception e) {
@@ -57,7 +56,7 @@ public class UserDaoImp extends BaseDBFactor<UserBean> {
 		try {
 			conn=getConn();
 			QueryRunner qr=new QueryRunner();
-			String sql="select * from t_user where stuid = ?";
+			String sql="select * from t_user where userId = ?";
 			userList=(List<UserBean>)qr.query(conn,sql,new BeanHandler(UserBean.class),userid);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -104,11 +103,10 @@ public class UserDaoImp extends BaseDBFactor<UserBean> {
 		 int rowCount=0;
 		try {
 			conn=getConn();
-			String sql="update t_user set nickname = ? ,status = ? ,city = ? , birthday = ? , lastupdatetime = ? where userphone = ? ";
+			String sql="update t_user set nickname = ? ,city = ? , birthday = ? , lastupdatetime = ? where userphone = ? ";
 			stat=conn.prepareStatement(sql);
 			//设置值
 			stat.setString(1, user.getNickName());
-			stat.setString(2,user.getStatus());
 			stat.setString(3,user.getCity());
 			stat.setString(4,user.getBirthday());
 			stat.setLong(5, System.currentTimeMillis());
@@ -204,6 +202,11 @@ public class UserDaoImp extends BaseDBFactor<UserBean> {
 			return false;
 		}
 		return true;
+	}
+
+	@Override
+	public UserBean getData(Object... obj) {
+		return null;
 	}
 
 }
