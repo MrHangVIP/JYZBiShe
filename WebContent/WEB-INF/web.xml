@@ -6,12 +6,12 @@
 
 
 	<listener>
-		<listener-class>com.zsx.utils.ListenerLoadConfig</listener-class>
+		<listener-class>com.jyz.utils.ListenerLoadConfig</listener-class>
 	</listener>
 
 	<servlet>
 		<servlet-name>Test</servlet-name>
-		<servlet-class>com.zsx.servlets.Test</servlet-class>
+		<servlet-class>com.jyz.servlets.Test</servlet-class>
 	</servlet>
 
 
@@ -22,7 +22,7 @@
 
 	<servlet>
 		<servlet-name>RegistUser</servlet-name>
-		<servlet-class>com.zsx.servlets.RegistUser</servlet-class>
+		<servlet-class>com.jyz.servlets.RegistUser</servlet-class>
 	</servlet>
 
 
@@ -33,7 +33,7 @@
 
 	<servlet>
 		<servlet-name>LoginUser</servlet-name>
-		<servlet-class>com.zsx.servlets.LoginUser</servlet-class>
+		<servlet-class>com.jyz.servlets.LoginUser</servlet-class>
 	</servlet>
 
 
@@ -44,7 +44,7 @@
 
 	<servlet>
 		<servlet-name>GetUserInfo</servlet-name>
-		<servlet-class>com.zsx.servlets.GetUserInfo</servlet-class>
+		<servlet-class>com.jyz.servlets.GetUserInfo</servlet-class>
 	</servlet>
 
 
@@ -55,7 +55,7 @@
 
 	<servlet>
 		<servlet-name>UpdateUserInfo</servlet-name>
-		<servlet-class>com.zsx.servlets.UpdateUserInfo</servlet-class>
+		<servlet-class>com.jyz.servlets.UpdateUserInfo</servlet-class>
 	</servlet>
 	
 	<servlet-mapping>
@@ -65,7 +65,7 @@
 	
 	<servlet>
 		<servlet-name>ImageUpload</servlet-name>
-		<servlet-class>com.zsx.servlets.ImageUpload</servlet-class>
+		<servlet-class>com.jyz.servlets.ImageUpload</servlet-class>
 	</servlet>
 	
 	<servlet-mapping>
@@ -75,7 +75,7 @@
 	
 	<servlet>
 		<servlet-name>UpdateHeadUrl</servlet-name>
-		<servlet-class>com.zsx.servlets.UpdateHeadUrl</servlet-class>
+		<servlet-class>com.jyz.servlets.UpdateHeadUrl</servlet-class>
 	</servlet>
 	
 	<servlet-mapping>
@@ -84,47 +84,24 @@
 	</servlet-mapping>
 	
 	<servlet>
-		<servlet-name>GetRandomArticle</servlet-name>
-		<servlet-class>com.zsx.servlets.GetRandomArticle</servlet-class>
+		<servlet-name>CreateQuestionnaire</servlet-name>
+		<servlet-class>com.jyz.servlets.CreateQuestionnaire</servlet-class>
 	</servlet>
 	
 	<servlet-mapping>
-		<servlet-name>GetRandomArticle</servlet-name>
-		<url-pattern>/GetRandomArticle</url-pattern>
+		<servlet-name>CreateQuestionnaire</servlet-name>
+		<url-pattern>/CreateQuestionnaire</url-pattern>
 	</servlet-mapping>
-	
 	<servlet>
-		<servlet-name>GetTypeArticle</servlet-name>
-		<servlet-class>com.zsx.servlets.GetTypeArticle</servlet-class>
+		<servlet-name>GetQuestionnaireList</servlet-name>
+		<servlet-class>com.jyz.servlets.GetQuestionnaireList</servlet-class>
 	</servlet>
 	
 	<servlet-mapping>
-		<servlet-name>GetTypeArticle</servlet-name>
-		<url-pattern>/GetTypeArticle</url-pattern>
+		<servlet-name>GetQuestionnaireList</servlet-name>
+		<url-pattern>/GetQuestionnaireList</url-pattern>
 	</servlet-mapping>
 	
-	<servlet>
-		<servlet-name>WritePostBar</servlet-name>
-		<servlet-class>com.zsx.servlets.WritePostBar</servlet-class>
-	</servlet>
-	
-	<servlet-mapping>
-		<servlet-name>WritePostBar</servlet-name>
-		<url-pattern>/WritePostBar</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>GetPostBar</servlet-name>
-		<servlet-class>com.zsx.servlets.GetPostBar</servlet-class>
-	</servlet>
-	
-	<servlet-mapping>
-		<servlet-name>GetPostBar</servlet-name>
-		<url-pattern>/GetPostBar</url-pattern>
-	</servlet-mapping>
-
-
-
 </web-app>
 
 
