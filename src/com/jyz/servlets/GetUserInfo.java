@@ -6,6 +6,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.jyz.Daos.ScoreDaoImp;
 import com.jyz.Daos.UserDaoImp;
 import com.jyz.beans.UserBean;
 import com.jyz.servlets.base.BaseServletFactory;
@@ -24,6 +25,9 @@ public class GetUserInfo extends BaseServletFactory {
 		}else{
 			UserDaoImp usermodel=new UserDaoImp();
 			UserBean userInfo=usermodel.getUserInfo(userPhone);
+			ScoreDaoImp scoreDaoImp=new ScoreDaoImp();
+			int score=scoreDaoImp.getData(userInfo.getUserId()).getScore();
+			userInfo.setScore(score);
 			JSONObject itemJson = JSONObject.fromObject(userInfo);
 			map.put("result", token);
 			map.put("data",  itemJson.toString());

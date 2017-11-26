@@ -30,7 +30,6 @@ public class RegistUser extends BaseServletFactory{
 		UserBean user=new UserBean();
 		user.setUserPhone(userPhone);
 		user.setUserPass(userPass);
-		user.setStatus(status);
 		UserDaoImp usermodel=new UserDaoImp();
 		boolean isExist=usermodel.userPhoneChecked(userPhone);
 		Map<String, String> map = new HashMap<String, String>();
