@@ -102,6 +102,17 @@
 		<url-pattern>/GetQuestionnaireList</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>CreateAnswer</servlet-name>
+		<servlet-class>com.jyz.servlets.CreateAnswer</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>CreateAnswer</servlet-name>
+		<url-pattern>/CreateAnswer</url-pattern>
+	</servlet-mapping>
+	
+	
 </web-app>
 
 
