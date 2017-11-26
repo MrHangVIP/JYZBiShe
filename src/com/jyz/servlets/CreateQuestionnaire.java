@@ -30,6 +30,8 @@ public class CreateQuestionnaire extends BaseServletFactory {
 		questionnaireBean.setThanks(request.getParameter("thanks"));
 		questionnaireBean.setIntroduce(request.getParameter("introduce"));
 		questionnaireBean.setNickName(request.getParameter("nickname"));
+		questionnaireBean.setFinishTime(request.getParameter("finishTime"));
+		questionnaireBean.setFinishTimeStmp(Long.parseLong(request.getParameter("finishTimeStmp")));
 		int userId=Integer.parseInt(request.getParameter("userId"));
 		questionnaireBean.setUserId(userId);
 		List<QuestionBean> questionList = new ArrayList<>();

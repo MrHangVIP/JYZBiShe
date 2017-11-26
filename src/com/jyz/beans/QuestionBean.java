@@ -3,106 +3,106 @@ package com.jyz.beans;
 import java.io.Serializable;
 import java.util.List;
 
-public class QuestionBean implements Serializable{
-	
-	  private int questionId;
+public class QuestionBean implements Serializable {
 
-	    private int questionnaireId;
+	private int questionId;
 
-	    private String title;
+	private int questionnaireId;
 
-	    private List<SelectionBean> selectionItemList;
+	private String title;
 
-	    private String type;//类型 1,单选,2多选,3填空
+	private List<SelectionBean> selectionItemList;
 
-	    private String line;//行数 填空
+	private String type;// 类型 1,单选,2多选,3填空
 
-	    private String least;//最少选项
+	private String line;// 行数 填空
 
-	    private String more;//最多选项
+	private String least;// 最少选项
 
-	    private String isMust;//是否必填
+	private String more;// 最多选项
 
-	    private String answerStr;//答案 可以是文字,可以是选项的列表
+	private String isMust;// 是否必填
 
-	    public int getQuestionId() {
-	        return questionId;
-	    }
+	private String answerStr;// 答案 可以是文字,可以是选项的列表
 
-	    public int getQuestionnaireId() {
-	        return questionnaireId;
-	    }
+	public int getQuestionId() {
+		return questionId;
+	}
 
-	    public void setQuestionnaireId(int questionnaireId) {
-	        this.questionnaireId = questionnaireId;
-	    }
+	public int getQuestionnaireId() {
+		return questionnaireId;
+	}
 
-	    public void setQuestionId(int questionId) {
-	        this.questionId = questionId;
-	    }
+	public void setQuestionnaireId(int questionnaireId) {
+		this.questionnaireId = questionnaireId;
+	}
 
-	    public String getTitle() {
-	        return title;
-	    }
+	public void setQuestionId(int questionId) {
+		this.questionId = questionId;
+	}
 
-	    public void setTitle(String title) {
-	        this.title = title;
-	    }
+	public String getTitle() {
+		return title;
+	}
 
-	    public List<SelectionBean> getSelectionItemList() {
-			return selectionItemList;
-		}
+	public void setTitle(String title) {
+		this.title = title;
+	}
 
-		public void setSelectionItemList(List<SelectionBean> selectionItemList) {
-			this.selectionItemList = selectionItemList;
-		}
+	public List<SelectionBean> getSelectionItemList() {
+		return selectionItemList;
+	}
 
-		public String getType() {
-	        return type;
-	    }
+	public void setSelectionItemList(List<SelectionBean> selectionItemList) {
+		this.selectionItemList = selectionItemList;
+	}
 
-	    public void setType(String type) {
-	        this.type = type;
-	    }
+	public String getType() {
+		return type;
+	}
 
-	    public String getLine() {
-			return line;
-		}
+	public void setType(String type) {
+		this.type = type;
+	}
 
-		public void setLine(String line) {
-			this.line = line;
-		}
+	public String getLine() {
+		return line;
+	}
 
-		public String getLeast() {
-	        return least;
-	    }
+	public void setLine(String line) {
+		this.line = line;
+	}
 
-	    public void setLeast(String least) {
-	        this.least = least;
-	    }
+	public String getLeast() {
+		return least;
+	}
 
-	    public String getMore() {
-	        return more;
-	    }
+	public void setLeast(String least) {
+		this.least = least;
+	}
 
-	    public void setMore(String more) {
-	        this.more = more;
-	    }
+	public String getMore() {
+		return more;
+	}
 
-	    public String getIsMust() {
-	        return isMust;
-	    }
+	public void setMore(String more) {
+		this.more = more;
+	}
 
-	    public void setIsMust(String isMust) {
-	        this.isMust = isMust;
-	    }
+	public String getIsMust() {
+		return isMust;
+	}
 
-	    public String getAnswerStr() {
-	        return answerStr;
-	    }
+	public void setIsMust(String isMust) {
+		this.isMust = isMust;
+	}
 
-	    public void setAnswerStr(String answerStr) {
-	        this.answerStr = answerStr;
-	    }
+	public String getAnswerStr() {
+		return answerStr;
+	}
+
+	public void setAnswerStr(String answerStr) {
+		this.answerStr = answerStr;
+	}
 
 }

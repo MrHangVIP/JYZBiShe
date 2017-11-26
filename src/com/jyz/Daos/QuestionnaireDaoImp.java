@@ -1,18 +1,15 @@
 package com.jyz.Daos;
 
-import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.List;
 
 import org.apache.commons.dbutils.QueryRunner;
-import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 
 import com.jyz.Daos.base.BaseDBFactor;
 import com.jyz.beans.QuestionnaireBean;
-import com.jyz.beans.UserBean;
 import com.jyz.utils.DateUtil;
 
 public class QuestionnaireDaoImp extends BaseDBFactor<QuestionnaireBean> {
@@ -62,8 +59,8 @@ public class QuestionnaireDaoImp extends BaseDBFactor<QuestionnaireBean> {
 		int ret=-1;
 		try {
 			conn = getConn();
-			String sql = "insert into t_questionnaire(userId, title,introduce,thanks,createtime,createtimestmp,nickname)"
-					+ " value(?,?,?,?,?,?,?)";
+			String sql = "insert into t_questionnaire(userId, title,introduce,thanks,createtime,createtimestmp,nickname,finishtime,finishtimestmp)"
+					+ " value(?,?,?,?,?,?,?,?,?)";
 			stat = conn.prepareStatement(sql);
 			// 设置值
 			stat.setInt(1, t.getUserId());
@@ -73,14 +70,19 @@ public class QuestionnaireDaoImp extends BaseDBFactor<QuestionnaireBean> {
 			stat.setString(5, DateUtil.getCurrentDate());
 			stat.setLong(6, System.currentTimeMillis());
 			stat.setString(7, t.getNickName());
+			stat.setString(8,t.getFinishTime());
+			stat.setLong(9, t.getFinishTimeStmp());
 			// 执行
 			rowCount = stat.executeUpdate();
-			ResultSet rs = stat.getGeneratedKeys();
-			if (rs.next()) {
-				Object obj = rs.getObject(1);
-				System.out.println("QuestionnaireDaoImp:"+obj.toString());
-				ret=Integer.parseInt(obj.toString());
+			if(rowCount>0){
+				ResultSet rs = stat.getGeneratedKeys();
+				if (rs.next()) {
+					Object obj = rs.getObject(1);
+					System.out.println("QuestionnaireDaoImp:"+obj.toString());
+					ret=Integer.parseInt(obj.toString());
+				}
 			}
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

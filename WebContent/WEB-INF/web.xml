@@ -42,6 +42,77 @@
 		<url-pattern>/LoginUser</url-pattern>
 	</servlet-mapping>
 
+	<servlet>
+		<servlet-name>GetUserInfo</servlet-name>
+		<servlet-class>com.jyz.servlets.GetUserInfo</servlet-class>
+	</servlet>
+
+
+	<servlet-mapping>
+		<servlet-name>GetUserInfo</servlet-name>
+		<url-pattern>/GetUserInfo</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>UpdateUserInfo</servlet-name>
+		<servlet-class>com.jyz.servlets.UpdateUserInfo</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>UpdateUserInfo</servlet-name>
+		<url-pattern>/UpdateUserInfo</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ImageUpload</servlet-name>
+		<servlet-class>com.jyz.servlets.ImageUpload</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>ImageUpload</servlet-name>
+		<url-pattern>/ImageUpload</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>UpdateHeadUrl</servlet-name>
+		<servlet-class>com.jyz.servlets.UpdateHeadUrl</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>UpdateHeadUrl</servlet-name>
+		<url-pattern>/UpdateHeadUrl</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>CreateQuestionnaire</servlet-name>
+		<servlet-class>com.jyz.servlets.CreateQuestionnaire</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>CreateQuestionnaire</servlet-name>
+		<url-pattern>/CreateQuestionnaire</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>GetQuestionnaireList</servlet-name>
+		<servlet-class>com.jyz.servlets.GetQuestionnaireList</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>GetQuestionnaireList</servlet-name>
+		<url-pattern>/GetQuestionnaireList</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>CreateAnswer</servlet-name>
+		<servlet-class>com.jyz.servlets.CreateAnswer</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>CreateAnswer</servlet-name>
+		<url-pattern>/CreateAnswer</url-pattern>
+	</servlet-mapping>
+	
+	
 </web-app>
 
 
