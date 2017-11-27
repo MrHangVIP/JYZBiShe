@@ -90,5 +90,75 @@ public class QuestionnaireDaoImp extends BaseDBFactor<QuestionnaireBean> {
 		}
 		return ret;
 	}
+	
+	/**
+	 * 获取用户发布的问卷
+	 * @param userId
+	 * @return
+	 */
+	public List<QuestionnaireBean> getSomeOneDataList(int userId) {
+		Connection conn=null;
+		List<QuestionnaireBean> questionnaireBeans=null;
+		try {
+			conn=getConn();
+			QueryRunner qr=new QueryRunner();
+			String sql="select * from t_questionnaire where userId= ?";
+			questionnaireBeans=(List<QuestionnaireBean>)qr.query(conn,sql,new BeanListHandler<QuestionnaireBean>(QuestionnaireBean.class),userId);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			closeConn(null, conn);
+		}
+		
+		return questionnaireBeans;
+	}
+	
+	/**
+	 * 获取用户回答的问卷
+	 * @param userId
+	 * @return
+	 */
+	public List<QuestionnaireBean> getAnswerList(int userId) {
+		Connection conn=null;
+		List<QuestionnaireBean> questionnaireBeans=null;
+		try {
+			conn=getConn();
+			QueryRunner qr=new QueryRunner();
+			String sql="select distinct (t_questionnaire.questionnaireId),t_questionnaire.* from "
+					+ "t_questionnaire inner JOIN t_answer "
+					+ " On t_questionnaire.questionnaireId = t_answer.questionnaireId "
+					+ "where t_answer.userId= ?";
+			questionnaireBeans=(List<QuestionnaireBean>)qr.query(conn,sql,new BeanListHandler<QuestionnaireBean>(QuestionnaireBean.class),userId);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			closeConn(null, conn);
+		}
+		
+		return questionnaireBeans;
+	}
+	
+	/**
+	 * 获取问卷的回答数量
+	 * @param qusetionnaireId
+	 * @return
+	 */
+	public int getAnswerNum(int qusetionnaireId) {
+		Connection conn=null;
+		PreparedStatement stat = null;
+		int count=0;
+		try {
+			conn=getConn();
+			String sql="select count( distinct userId) as num from t_answer where questionnaireId= "+ qusetionnaireId;
+			stat = conn.prepareStatement(sql);
+			ResultSet rs=stat.executeQuery();
+			count=rs.getInt("num");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			closeConn(null, conn);
+		}
+		return count;
+	}
 
 }
