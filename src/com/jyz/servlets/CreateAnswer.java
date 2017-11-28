@@ -23,33 +23,33 @@ public class CreateAnswer extends BaseServletFactory {
 		int userId=0,questionnaireId=0;
 		for (int i = 0; i < params.keySet().size(); i++) {
 			AnswerBean answerBean = new AnswerBean();
-		for (String key : params.keySet()) {
-			if (key.equals("questionnaireId" + i)) {
-				answerBean.setQuestionnaireId(Integer.parseInt((request.getParameter(key))));
-				questionnaireId=Integer.parseInt((request.getParameter(key)));
+			for (String key : params.keySet()) {
+				if (key.equals("questionnaireId" + i)) {
+					answerBean.setQuestionnaireId(Integer.parseInt((request.getParameter(key))));
+					questionnaireId=Integer.parseInt((request.getParameter(key)));
+				}
+				if (key.equals("questionId" + i)) {
+					answerBean.setQuestionId(Integer.parseInt((request.getParameter(key))));
+				}
+				if (key.equals("userId" + i)) {
+					answerBean.setUserId(Integer.parseInt((request.getParameter(key))));
+					userId=Integer.parseInt((request.getParameter(key)));
+				}
+				if (key.equals("selectionId" + i)) {
+					answerBean.setSelectionId(Integer.parseInt((request.getParameter(key))));
+				}
+				if (key.equals("type" + i)) {
+					answerBean.setType(request.getParameter(key));
+				}
+				if (key.equals("answer" + i)) {
+					answerBean.setAnswer(request.getParameter(key));
+				}
 			}
-			if (key.equals("questionId" + i)) {
-				answerBean.setQuestionId(Integer.parseInt((request.getParameter(key))));
+			if(answerBean.getType()!=null){
+				answerList.add(answerBean);
+			}else{
+				i=params.size();
 			}
-			if (key.equals("userId" + i)) {
-				answerBean.setUserId(Integer.parseInt((request.getParameter(key))));
-				userId=Integer.parseInt((request.getParameter(key)));
-			}
-			if (key.equals("selectionId" + i)) {
-				answerBean.setSelectionId(Integer.parseInt((request.getParameter(key))));
-			}
-			if (key.equals("type" + i)) {
-				answerBean.setType(request.getParameter(key));
-			}
-			if (key.equals("answer" + i)) {
-				answerBean.setAnswer(request.getParameter(key));
-			}
-		}
-		if(answerBean.getType()!=null){
-			answerList.add(answerBean);
-		}else{
-			i=params.size();
-		}
 		}
 		Map<String, String> map = new HashMap<String, String>();
 		boolean isSuccess=true;

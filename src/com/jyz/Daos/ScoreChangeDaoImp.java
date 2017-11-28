@@ -52,7 +52,7 @@ public class ScoreChangeDaoImp extends BaseDBFactor<ScoreChangeBean>{
 		try {
 			conn=getConn();
 			QueryRunner qr=new QueryRunner();
-			String sql="select * from t_score_record where userId = ?";
+			String sql="select * from t_score_record where userId = ? order by id desc";
 			scorechangeList=(List<ScoreChangeBean>)qr.query(conn,sql,new BeanListHandler<ScoreChangeBean>(ScoreChangeBean.class),userid);
 		} catch (Exception e) {
 			e.printStackTrace();

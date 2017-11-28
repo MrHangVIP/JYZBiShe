@@ -30,6 +30,8 @@ public class QuestionnaireBean implements Serializable{
 	private String nickName;// 创建名字
 
 	private int answerNum;// 回答数量
+	
+	private String headUrl;
 
 	public int getQuestionnaireId() {
 		return questionnaireId;
@@ -133,6 +135,14 @@ public class QuestionnaireBean implements Serializable{
 
 	public void setAnswerNum(int answerNum) {
 		this.answerNum = answerNum;
+	}
+
+	public String getHeadUrl() {
+		return headUrl;
+	}
+
+	public void setHeadUrl(String headUrl) {
+		this.headUrl = headUrl;
 	}
 
 }

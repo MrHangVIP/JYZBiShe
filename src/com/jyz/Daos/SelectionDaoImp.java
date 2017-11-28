@@ -16,8 +16,6 @@ import com.jyz.beans.SelectionBean;
 
 public class SelectionDaoImp extends BaseDBFactor<SelectionBean>{
 
-	
-	
 	@Override
 	public boolean insertData(SelectionBean t) {
 		Connection conn = null;

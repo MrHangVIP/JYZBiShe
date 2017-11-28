@@ -26,7 +26,7 @@ public class QuestionnaireDaoImp extends BaseDBFactor<QuestionnaireBean> {
 		try {
 			conn=getConn();
 			QueryRunner qr=new QueryRunner();
-			String sql="select * from t_questionnaire";
+			String sql="select * from t_questionnaire  order by questionnaireId desc";
 			questionnaireBeans=(List<QuestionnaireBean>)qr.query(conn,sql,new BeanListHandler<QuestionnaireBean>(QuestionnaireBean.class));
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -59,8 +59,8 @@ public class QuestionnaireDaoImp extends BaseDBFactor<QuestionnaireBean> {
 		int ret=-1;
 		try {
 			conn = getConn();
-			String sql = "insert into t_questionnaire(userId, title,introduce,thanks,createtime,createtimestmp,nickname,finishtime,finishtimestmp)"
-					+ " value(?,?,?,?,?,?,?,?,?)";
+			String sql = "insert into t_questionnaire(userId, title,introduce,thanks,createtime,createtimestmp,nickname,finishtime,finishtimestmp,headurl)"
+					+ " value(?,?,?,?,?,?,?,?,?,?)";
 			stat = conn.prepareStatement(sql);
 			// 设置值
 			stat.setInt(1, t.getUserId());
@@ -72,6 +72,7 @@ public class QuestionnaireDaoImp extends BaseDBFactor<QuestionnaireBean> {
 			stat.setString(7, t.getNickName());
 			stat.setString(8,t.getFinishTime());
 			stat.setLong(9, t.getFinishTimeStmp());
+			stat.setString(10, t.getHeadUrl());
 			// 执行
 			rowCount = stat.executeUpdate();
 			if(rowCount>0){
@@ -102,7 +103,7 @@ public class QuestionnaireDaoImp extends BaseDBFactor<QuestionnaireBean> {
 		try {
 			conn=getConn();
 			QueryRunner qr=new QueryRunner();
-			String sql="select * from t_questionnaire where userId= ?";
+			String sql="select * from t_questionnaire where userId= ?  order by questionnaireId desc";
 			questionnaireBeans=(List<QuestionnaireBean>)qr.query(conn,sql,new BeanListHandler<QuestionnaireBean>(QuestionnaireBean.class),userId);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -127,7 +128,7 @@ public class QuestionnaireDaoImp extends BaseDBFactor<QuestionnaireBean> {
 			String sql="select distinct (t_questionnaire.questionnaireId),t_questionnaire.* from "
 					+ "t_questionnaire inner JOIN t_answer "
 					+ " On t_questionnaire.questionnaireId = t_answer.questionnaireId "
-					+ "where t_answer.userId= ?";
+					+ "where t_answer.userId= ? order by t_questionnaire.questionnaireId desc";
 			questionnaireBeans=(List<QuestionnaireBean>)qr.query(conn,sql,new BeanListHandler<QuestionnaireBean>(QuestionnaireBean.class),userId);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -149,7 +150,7 @@ public class QuestionnaireDaoImp extends BaseDBFactor<QuestionnaireBean> {
 		int count=0;
 		try {
 			conn=getConn();
-			String sql="select count( distinct userId) as num from t_answer where questionnaireId= "+ qusetionnaireId;
+			String sql="select count( distinct userId) as num from t_answer where questionnaireId= "+ qusetionnaireId ;
 			stat = conn.prepareStatement(sql);
 			ResultSet rs=stat.executeQuery();
 			count=rs.getInt("num");

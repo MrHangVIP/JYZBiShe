@@ -112,6 +112,16 @@
 		<url-pattern>/CreateAnswer</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>GetScoreRecord</servlet-name>
+		<servlet-class>com.jyz.servlets.GetScoreRecord</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>GetScoreRecord</servlet-name>
+		<url-pattern>/GetScoreRecord</url-pattern>
+	</servlet-mapping>
+	
 	
 </web-app>
 
