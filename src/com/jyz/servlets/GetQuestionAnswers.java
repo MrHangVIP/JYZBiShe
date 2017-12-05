@@ -16,21 +16,19 @@ import com.jyz.servlets.base.BaseServletFactory;
 import net.sf.json.JSONArray;
 
 /**
- * 获取对应问卷和用户的答案
+ * 获取问题的所有答案
  * @author Songzhihang
  *
  */
-public class GetAnswer extends BaseServletFactory {
+public class GetQuestionAnswers extends BaseServletFactory {
 	private static final long serialVersionUID = 1L;
 
 	@Override
 	protected Map<String, String> dataModel(HttpServletRequest request, HttpServletResponse response) {
-		String userId = request.getParameter("userId");
-		String questionnaireId = request.getParameter("questionnaireId");
+		String questionId = request.getParameter("questionId");
 		Map<String, String> map = new HashMap<String, String>();
 		AnswerDaoImp answerDaoImp = new AnswerDaoImp();
-		List<AnswerBean> answerList = answerDaoImp.getDataList(Integer.parseInt(questionnaireId),
-				Integer.parseInt(userId));
+		List<AnswerBean> answerList = answerDaoImp.getDataList(Integer.parseInt(questionId));
 		if (answerList != null) {
 			JSONArray itemJson = JSONArray.fromObject(answerList);
 			map.put("result", "success");

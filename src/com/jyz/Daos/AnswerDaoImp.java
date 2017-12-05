@@ -83,5 +83,21 @@ public class AnswerDaoImp extends BaseDBFactor<AnswerBean> {
 	public boolean deleteData(int id) {
 		return false;
 	}
+	
+	public List<AnswerBean> getDataList(int questionId) {
+		Connection conn = null;
+		List<AnswerBean> questionBeans = null;
+		try {
+			conn = getConn();
+			QueryRunner qr = new QueryRunner();
+			String sql = "select * from t_answer where questionId = ?";
+			questionBeans = (List<AnswerBean>) qr.query(conn, sql,new BeanListHandler<AnswerBean>(AnswerBean.class), questionId);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			closeConn(null, conn);
+		}
+		return questionBeans;
+	}
 
 }

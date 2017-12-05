@@ -132,6 +132,16 @@
 		<url-pattern>/GetAnswer</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>GetQuestionAnswers</servlet-name>
+		<servlet-class>com.jyz.servlets.GetQuestionAnswers</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>GetQuestionAnswers</servlet-name>
+		<url-pattern>/GetQuestionAnswers</url-pattern>
+	</servlet-mapping>
+	
 	
 </web-app>
 
