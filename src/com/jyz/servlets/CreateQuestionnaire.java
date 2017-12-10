@@ -29,12 +29,19 @@ public class CreateQuestionnaire extends BaseServletFactory {
 		questionnaireBean.setTitle(request.getParameter("title"));
 		questionnaireBean.setThanks(request.getParameter("thanks"));
 		questionnaireBean.setIntroduce(request.getParameter("introduce"));
-		questionnaireBean.setNickName(request.getParameter("nickname"));
 		questionnaireBean.setFinishTime(request.getParameter("finishTime"));
 		questionnaireBean.setFinishTimeStmp(Long.parseLong(request.getParameter("finishTimeStmp")));
-		questionnaireBean.setHeadUrl(request.getParameter("headUrl"));
 		int userId=Integer.parseInt(request.getParameter("userId"));
 		questionnaireBean.setUserId(userId);
+		Map<String, String> map = new HashMap<String, String>();
+		//监测积分是否足够
+		ScoreDaoImp scoreDaoImp=new ScoreDaoImp();
+		ScoreBean scoreBean=scoreDaoImp.getData(userId);
+		if(scoreBean.getScore()<10){
+			map.put("result", "fail");
+			map.put("data", "积分不足，可通过回答问卷来赚取积分！");
+			return map;
+		}
 		List<QuestionBean> questionList = new ArrayList<>();
 		Map<String, String[]> params = request.getParameterMap();
 		for (int i = 0; i < params.keySet().size() - 4; i++) {
@@ -88,7 +95,6 @@ public class CreateQuestionnaire extends BaseServletFactory {
 			}
 		}
 		questionnaireBean.setQuestionItemList(questionList);
-		Map<String, String> map = new HashMap<String, String>();
 		QuestionnaireDaoImp questionnaireDaoImp = new QuestionnaireDaoImp();
 		int questionnaireId = questionnaireDaoImp.insertDatas(questionnaireBean);
 		boolean isSuccess=true;
@@ -121,8 +127,8 @@ public class CreateQuestionnaire extends BaseServletFactory {
 		}
 		if(isSuccess){
 //			更新積分
-			ScoreDaoImp scoreDaoImp=new ScoreDaoImp();
-			scoreDaoImp.updateData(false,userId,questionnaireId);
+			ScoreDaoImp scoreDaoImp1=new ScoreDaoImp();
+			scoreDaoImp1.updateData(false,userId,questionnaireId);
 			map.put("result", "success");
 			map.put("data", "createSuccess");
 		}else{

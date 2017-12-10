@@ -142,6 +142,16 @@
 		<url-pattern>/GetQuestionAnswers</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>UpdatePassWord</servlet-name>
+		<servlet-class>com.jyz.servlets.UpdatePassWord</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>UpdatePassWord</servlet-name>
+		<url-pattern>/UpdatePassWord</url-pattern>
+	</servlet-mapping>
+	
 	
 </web-app>
 

@@ -38,15 +38,18 @@ public class ImageUpload extends BaseServletFactory {
 		// D:\GitWorkSpace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\jyzBiShe\jyzBiShe\ImageUpload
 		// getRealPath=request.getSession().getServletContext().getRealPath(request.getRequestURI());
 		// D:\GitWorkSpace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\jyzBiShe\
-		String imagePath = this.getServletConfig().getServletContext().getRealPath("/");
-//		/Users/songzhihang/Workspace/gitworkspace/webWorkSpace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/jyzbishe/image/1489657508511.png
-		
+		String imagePath = this.getServletConfig().getServletContext().getRealPath("/") + "//image//";
+		// /Users/songzhihang/Workspace/gitworkspace/webWorkSpace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/jyzbishe/image/1489657508511.png
+		// windows 和mac 文件系统区别 所以文件目录符号不同
+		// File imageFile = new File(imagePath + "\\image\\" +
+		// fileName);
+		// 根据文件创建文件的输出流
 		List<String> images = new ArrayList<String>();
 		List<String> imageNameList = new ArrayList<String>();
-		Map<String,String[]> params=request.getParameterMap();
-		for(int i=1;i<=params.keySet().size()-2;i++){
-			for(String key:params.keySet()){
-				if(key.equals("image"+i)){
+		Map<String, String[]> params = request.getParameterMap();
+		for (int i = 1; i <= params.keySet().size() - 2; i++) {
+			for (String key : params.keySet()) {
+				if (key.equals("image" + i)) {
 					images.add(request.getParameter(key));
 				}
 			}
@@ -67,10 +70,11 @@ public class ImageUpload extends BaseServletFactory {
 			try {
 				bos.write(imageByte);
 				// 写入文件
-				File imageFile = new File(imagePath + "//image//" + fileName);
-				//windows 和mac 文件系统区别 所以文件目录符号不同
-//				File imageFile = new File(imagePath + "\\image\\" + fileName);
-				// 根据文件创建文件的输出流
+				File imagePathFile=new File(imagePath);
+				if (!imagePathFile.exists()) {
+					imagePathFile.mkdirs();
+				}
+				File imageFile = new File(imagePath + fileName);
 				out = new FileOutputStream(imageFile);
 				bos.writeTo(out);
 			} catch (IOException e) {

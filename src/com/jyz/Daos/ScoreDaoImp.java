@@ -73,10 +73,12 @@ public class ScoreDaoImp extends BaseDBFactor<ScoreBean>{
 			}else{
 				score=score-10;
 			}
-			String sql="update t_score set score= ? ";
+			String sql="update t_score set score= ? where userId= ?";
 			stat=conn.prepareStatement(sql);
 			//设置值
 			stat.setInt(1,score);
+			stat.setInt(2,userId);
+
 			//执行
 			rowCount=stat.executeUpdate();
 		} catch (Exception e) {

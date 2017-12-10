@@ -107,10 +107,10 @@ public class UserDaoImp extends BaseDBFactor<UserBean> {
 			stat=conn.prepareStatement(sql);
 			//设置值
 			stat.setString(1, user.getNickName());
-			stat.setString(3,user.getCity());
-			stat.setString(4,user.getBirthday());
-			stat.setLong(5, System.currentTimeMillis());
-			stat.setString(6,user.getUserPhone());
+			stat.setString(2,user.getCity());
+			stat.setString(3,user.getBirthday());
+			stat.setLong(4, System.currentTimeMillis());
+			stat.setString(5,user.getUserPhone());
 			//执行
 			rowCount=stat.executeUpdate();
 		} catch (Exception e) {
@@ -134,6 +134,38 @@ public class UserDaoImp extends BaseDBFactor<UserBean> {
 			stat=conn.prepareStatement(sql);
 			//设置值
 			stat.setString(1,headUrl);
+			stat.setLong(2, System.currentTimeMillis());
+			stat.setString(3,userPhone);
+			//执行
+			rowCount=stat.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			closeConn(stat, conn);
+		}
+		if(rowCount>0){
+			return true;
+		}
+		return false;
+	}
+	
+	
+	/**
+	 * 修改密码
+	 * @param userPhone
+	 * @param password
+	 * @return
+	 */
+	public boolean updatePassword(String userPhone,String password) {
+		Connection conn=null;
+		PreparedStatement stat=null;
+		 int rowCount=0;
+		try {
+			conn=getConn();
+			String sql="update t_user set userpass= ? , lastupdatetime = ? where userPhone = ? ";
+			stat=conn.prepareStatement(sql);
+			//设置值
+			stat.setString(1,password);
 			stat.setLong(2, System.currentTimeMillis());
 			stat.setString(3,userPhone);
 			//执行
